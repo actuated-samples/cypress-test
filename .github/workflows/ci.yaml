@@ -7,7 +7,7 @@ jobs:
     name: cypress
     steps:
       - uses: actions/checkout@v3
-      - name: Install deps
+      - name: Install xvfb deps
         run: |
           sudo apt update -qqy && \
             sudo apt-get install -qqy --no-install-recommends libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
@@ -20,6 +20,11 @@ jobs:
     name: chrome action
     steps:
       - uses: actions/checkout@v3
+      - name: Install xvfb deps
+        run: |
+          sudo apt update -qqy && \
+            sudo apt-get install -qqy --no-install-recommends libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+
       - uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: beta
