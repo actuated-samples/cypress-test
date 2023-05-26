@@ -15,7 +15,6 @@ jobs:
         with:
           browser: chrome
           spec: ./example.js
-jobs:
   chrome:
     runs-on: actuated
     name: chrome action
