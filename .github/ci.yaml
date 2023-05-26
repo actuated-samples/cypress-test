@@ -1,5 +1,6 @@
 name: Chrome
 on: push
+
 jobs:
   chrome:
     runs-on: actuated
