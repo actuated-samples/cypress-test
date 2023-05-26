@@ -2,9 +2,9 @@ name: Chrome
 on: push
 
 jobs:
-  chrome:
+  cypress:
     runs-on: actuated
-    name: E2E on Chrome
+    name: cypress
     steps:
       - uses: actions/checkout@v3
       - name: Install deps
@@ -15,6 +15,12 @@ jobs:
         with:
           browser: chrome
           spec: ./example.js
+jobs:
+  chrome:
+    runs-on: actuated
+    name: chrome action
+    steps:
+      - uses: actions/checkout@v3
       - uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: beta
